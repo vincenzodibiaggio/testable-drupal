@@ -1,4 +1,4 @@
 drupalBehat
 ===========
 
-An installation of Drupal 7.* with Behat. Used for testing
+An installation of Drupal 7.22 with Behat. Used for testing

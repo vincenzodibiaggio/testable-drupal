@@ -1,0 +1,10 @@
+{
+    "name": "vincenzodibiaggio/drupalBehat",
+    "description": "An installation of Drupal 7.22 with Behat. Used for testing",
+    "authors": [
+        {
+            "name": "Vincenzo Di Biaggio",
+            "email": "vincenzodb@vincenzodb.com"
+        }
+    ]
+}
