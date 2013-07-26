@@ -1,4 +1,20 @@
-sites/*/settings*.php
+#composer
+composer.lock
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/*settings*.php
+
+# Ignore paths that contain generated content.
+cache/
+files/
 sites/*/files
 sites/*/private
 
+
+#vendor
+
+vendor/*
+
+#behat bin
+
+bin/*

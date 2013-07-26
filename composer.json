@@ -6,5 +6,14 @@
             "name": "Vincenzo Di Biaggio",
             "email": "vincenzodb@vincenzodb.com"
         }
-    ]
+    ],
+    "require": {
+        "behat/behat": "2.4.*@stable",
+        "behat/mink": "1.4@stable",
+        "behat/mink-sahi-driver": "*"
+    },
+
+    "config": {
+        "bin-dir": "bin/"
+    }
 }
