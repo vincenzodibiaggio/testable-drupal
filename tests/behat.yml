@@ -1,0 +1,17 @@
+default:
+  paths:
+    features:  features
+    bootstrap: features/bootstrap
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: http://drupalbehat.dev
+      goutte: ~
+      selenium2: ~
+
+annotations:
+  paths:
+    features: features/annotations
+
+closures:
+  paths:
+    features: features/closures
