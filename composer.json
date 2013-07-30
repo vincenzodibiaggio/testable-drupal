@@ -1,6 +1,6 @@
 {
     "name": "vincenzodibiaggio/testable-drupal",
-    "description": "An installation of Drupal 7.22 with Behat. Used for testing",
+    "description": "A simple set of tools and files to make your Drupal Installation a Testable Drupal Installation Based on Behat, Mink and using Selenium2 and Phantomjs, provide a basic structure to integrate with your tests.",
     "authors": [
         {
             "name": "Vincenzo Di Biaggio",
