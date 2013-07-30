@@ -23,21 +23,12 @@ Integration are welcome :)
 ```
     curl -s https://getcomposer.org/installer | php
 ```    
-3) Put in the 'composer.json' file
+3) Clone this repo in the root of project
 ```
-{
-    "require": {
-        "vincenzodibiaggio/drupalBehat": "*"
-    },
-    "minimum-stability": "dev",
-    "config": {
-        "bin-dir": "bin/"
-    }
-}
+    git clone https://github.com/vincenzodibiaggio/testable-drupal.git PATH_OF_YOUR_DRUPAL_INSTALLATION
 ```   
 4) Download Composer and Dependencies in your project directory
 ```
-    curl -s https://getcomposer.org/installer | php
     php composer.phar install
 ```
 5) Download [Selenium server](http://docs.seleniumhq.org/download/) 
