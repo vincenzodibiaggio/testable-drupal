@@ -8,7 +8,7 @@ At this time "Testable Drupal" has basic tests to verify the operation and to pe
 
 Integration are welcome :)
 
-### Components and reqirements
+### Components and requirements
 * [Composer](https://getcomposer.org)
 * A clean installation of Drupal 7.22 (your installation)
 * [drupal-extension](https://github.com/jhedstrom/drupalextension) - provided by composer
