@@ -39,4 +39,4 @@ vendor/*
 bin/*
 
 #output files
-test/*/jm_behat_report.html
+test/jm_behat_report.html

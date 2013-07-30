@@ -4,9 +4,23 @@ default:
     bootstrap: features/bootstrap
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: http://drupalbehat.dev
+      base_url: 'http://drupalbehat.dev'
       goutte: ~
-      selenium2: ~
+      browser_name: phantomjs
+      selenium2:
+        wd_host: "http://localhost:8080/wd/hub"
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      # Set the drush alias to "@self" by default, when executing tests from within the drupal installation.
+      drush:
+        root: /home/vincenzodb/www/drupal_behat
+      api_driver: drupal
+      drupal:
+        drupal_root: "/home/vincenzodb/www/drupal_behat"
+  formatter:
+    name:               pretty,html
+    parameters:
+      output_path:    null,jm_behat_report.html
 
 annotations:
   paths:

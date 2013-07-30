@@ -6,8 +6,11 @@ use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
+    
+use Behat\Behat\Event\StepEvent;
 
-use Behat\MinkExtension\Context\MinkContext;
+use Drupal\DrupalExtension\Context\DrupalContext;
+
 
 //
 // Require 3rd-party libraries here:
@@ -19,40 +22,97 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Features context.
  */
-class FeatureContext extends MinkContext
+class FeatureContext extends DrupalContext
 {
-  
     private $output;
-
-    /** @Given /^I am in a directory "([^"]*)"$/ */
-    public function iAmInADirectory($dir)
+    private $nodeId;
+    
+    /**
+     * Current authenticated user.
+     *
+     * A value of FALSE denotes an anonymous user.
+     */
+    protected $loggedInUser = FALSE;
+    
+    
+    /**
+     * Logs out the current user, if logged in.
+     *
+     * @Given /^I am logged out$/
+     */
+    public function logout() {
+        $this->visit('/user/logout');
+    }
+    
+        
+    
+    /**
+     * Automated Screenshot on fail
+     *
+     *
+     * @AfterStep
+     */
+    public function afterStep(Behat\Behat\Event\StepEvent $event)
     {
-        if (!file_exists($dir)) {
-            mkdir($dir);
+       
+       $context = $event->getContext();
+       if ($context->getMinkParameter('browser_name') == 'phantomjs' && $event->getResult() == StepEvent::FAILED) {
+            $this->iTakeAScreenshotWithName('fail');
+       }
+    }
+    
+    /**
+    * @Given /^I take a screenshot with name "([^"]*)"$/
+    */
+    public function iTakeAScreenshotWithName($name)
+    {
+        if ( 'goutte' !== $this->getSession()->getDriver() )
+        {
+            $screen = $this->getSession()->getScreenshot();
+            $h = fopen('/tmp/'.$name.'.jpg','w');
+            fputs ($h, $screen);
+            fclose ($h);
         }
-        chdir($dir);
+        
     }
-
-    /** @Given /^I have a file named "([^"]*)"$/ */
-    public function iHaveAFileNamed($file)
+    
+    /**
+    * @And /^I wait this time "([^"]*)"$/
+    */
+    public function iWaitThisTime($time)
     {
-        touch($file);
+        $this->getSession()->wait(5000, false );
     }
-
-    /** @When /^I run "([^"]*)"$/ */
-    public function iRun($command)
+    
+    
+    /**
+    * @Then /^I wait for "([^"]*)" element to appear$/
+    */
+    public function iWaitForElementToAppear($element)
     {
-        exec($command, $output);
-        $this->output = trim(implode("\n", $output));
+        $this->getSession()->wait(4000, "document.getElementById('$element')");
     }
-
-    /** @Then /^I should get:$/ */
-    public function iShouldGet(PyStringNode $string)
+    
+    
+    
+    /**
+    * @When /^I restart the browser$/
+    */
+    public function iRestartTheBrowser()
     {
-        if ((string) $string !== $this->output) {
-            throw new Exception(
-                "Actual output is:\n" . $this->output
-            );
-        }
+        $driver = $this->getSession()->getDriver();
+        $session = new \Behat\Mink\Session($driver);
+        $session->start();
+        $session->visit('/');
     }
+    
+    
+    /** @Given /^I capture id of node from url$/ */
+    public function iCaptureIdOfNodeFromUrl()
+    {
+        $url = $this->getSession()->getCurrentUrl();
+        $arrUrl = explode('/', $url);
+        
+        $this->nodeId = $arrUrl[count($arrUrl)-1];
+    }   
 }
