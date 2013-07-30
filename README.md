@@ -38,6 +38,10 @@ Integration are welcome :)
 
 6. Download [PhantomJs](http://phantomjs.org/download.html)  
 
+### Configuration
+
+1. Modify paths and host in ```tests/behat.yml``` : ```wd_host``` , ```root```, ```drupal_root```
+        
 ### Run suite
 
 1. Launch Selenium2
