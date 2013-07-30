@@ -12,9 +12,10 @@ sites/*/private
 
 
 #vendor
-
 vendor/*
 
 #behat bin
-
 bin/*
+
+#output files
+test/*/jm_behat_report.html
