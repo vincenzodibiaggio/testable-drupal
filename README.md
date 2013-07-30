@@ -1,7 +1,7 @@
 Testable Drupal
 ===========
 
-A simple set of tools and files to make your Drupal Installation a Testable Drupal Installation
+A simple set of tools and files to make your Drupal Installation a Testable Drupal Installation.
 Based on Behat, Mink and using Selenium2 and Phantomjs, provide a basic structure to integrate with your tests.
 
 At this time "Testable Drupal" has basic tests to verify the operation and to perform a screenshot when required or when a test fail (if you are not using Goutte).
@@ -18,7 +18,7 @@ Integration are welcome :)
 * PhantomJs
 
 ### Component installation
-1) Install and configure your Drupal installation
+1) Install and configure your Drupal installation.
 2) Download Composer
 ```
     curl -s https://getcomposer.org/installer | php
