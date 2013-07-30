@@ -1,20 +1,41 @@
-#composer
-composer.lock
-
-# Ignore configuration files that may contain sensitive information.
-sites/*/*settings*.php
-
 # Ignore paths that contain generated content.
 cache/
 files/
-sites/*/files
-sites/*/private
+sites/*
 
+# Ignore default text files
+.htaccess
+robots.txt
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+
+# Ignore everything 
+web.config
+authorize.php
+cron.php
+index.php
+install.php
+update.php
+xmlrpc.php
+/includes
+/misc
+/modules
+/profiles
+/scripts
+/themes
+
+#composer
+composer.lock
 
 #vendor
 vendor/*
 
-#behat bin
+#bin
 bin/*
 
 #output files
