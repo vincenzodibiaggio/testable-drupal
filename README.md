@@ -18,35 +18,39 @@ Integration are welcome :)
 * PhantomJs
 
 ### Component installation
-1) Install and configure your Drupal installation.
-2) Download Composer
+1. Install and configure your Drupal installation
+
+2. Download Composer
 ```
     curl -s https://getcomposer.org/installer | php
 ```    
-3) Clone this repo in the root of project
+
+3. Clone this repo in the root of project
 ```
     git clone https://github.com/vincenzodibiaggio/testable-drupal.git PATH_OF_YOUR_DRUPAL_INSTALLATION
 ```   
-4) Download Composer and Dependencies in your project directory
+
+4. Download Composer and Dependencies in your project directory
 ```
     php composer.phar install
 ```
-5) Download [Selenium server](http://docs.seleniumhq.org/download/) 
-6) Download [PhantomJs](http://phantomjs.org/download.html)  
+5. Download [Selenium server](http://docs.seleniumhq.org/download/) 
+
+6. Download [PhantomJs](http://phantomjs.org/download.html)  
 
 ### Run suite
 
-1) Launch Selenium2
+1. Launch Selenium2
 ```
     java -jar selenium-server-standalone-YOUR_VERSION.jar -role hub
 ```
 
-2) Launch PhantomJs
+2. Launch PhantomJs
 ```
     ./phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
 ```
 
-3) Launch tests
+3. Launch tests
 ```
     cd tests
     ../bin/behat features/test.feature 
