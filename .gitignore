@@ -40,3 +40,4 @@ bin/*
 
 #output files
 tests/jm_behat_report.html
+jsTests/screenshots/*
