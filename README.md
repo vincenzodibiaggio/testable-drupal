@@ -20,17 +20,25 @@ Integration are welcome :)
 ### Component installation
 1. Install and configure your Drupal installation
 
-2. Download Composer
+2. Download Composer in the root of your project
 ```
     curl -s https://getcomposer.org/installer | php
 ```    
 
-3. Clone this repo in the root of project
+3. If not present create in the root of your project a file with name composer.json with this content:
 ```
-    git clone https://github.com/vincenzodibiaggio/testable-drupal.git PATH_OF_YOUR_DRUPAL_INSTALLATION
+    {
+        "require": {
+            "vincenzodibiaggio/testable-drupal": "*"
+        },
+        "minimum-stability": "dev",
+        "config": {
+            "bin-dir": "bin/"
+        }
+    }
 ```   
 
-4. Download Composer and Dependencies in your project directory
+4. Download dependencies in your project directory
 ```
     php composer.phar install
 ```
@@ -40,7 +48,10 @@ Integration are welcome :)
 
 ### Configuration
 
-1. Modify paths and host in ```tests/behat.yml``` : ```wd_host``` , ```root```, ```drupal_root```
+1. Modify paths and host in ```tests/behat_dist.yml``` : ```wd_host``` , ```root```, ```drupal_root```
+2. If you want you can rename ```behat_dist.yml``` in ```behat.yml``` but if you launch ```behat --init``` you overwrite it!
+
+(if you launch a ```behat --init``` for error you can use the ```FeatureContext_dist.php``` to replace the new file)
         
 ### Run suite
 
@@ -56,8 +67,8 @@ Integration are welcome :)
 
 3. Launch tests
 ```
-    cd tests
-    ../bin/behat features/test.feature 
+    cd vendor/vincenzodibiaggio/testable-drupal/tests
+    ./../../../../bin/behat --config behat_dist.yml features/test.feature
 ```
 
 
