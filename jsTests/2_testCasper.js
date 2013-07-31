@@ -1,3 +1,4 @@
+phantom.injectJs('includes/includes.js');
 phantom.injectJs('includes/includeCasper.js');
 
 function Cow() {
