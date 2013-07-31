@@ -24,23 +24,20 @@ use Drupal\DrupalExtension\Context\DrupalContext;
  */
 class FeatureContext extends DrupalContext
 {
-    private $output;
-    private $nodeId;
+    protected $nodeId;
+    protected $parameters;
     
-    /**
-     * Current authenticated user.
-     *
-     * A value of FALSE denotes an anonymous user.
-     */
-    protected $loggedInUser = FALSE;
-    
+    public function __construct(array $parameters)
+    {
+        $this->parameters = $parameters;
+    }
     
     /**
      * Logs out the current user, if logged in.
      *
      * @Given /^I am logged out$/
      */
-    public function logout() {
+    public function logout() { 
         $this->visit('/user/logout');
     }
     
@@ -68,8 +65,10 @@ class FeatureContext extends DrupalContext
     {
         if ( 'goutte' !== $this->getSession()->getDriver() )
         {
+            $now = date('Y-m-d_G:i:s') ;
+            
             $screen = $this->getSession()->getScreenshot();
-            $h = fopen('/tmp/'.$name.'.jpg','w');
+            $h = fopen($this->parameters['screenshot_dir'].$name.'_'.$now.'.jpg','w');
             fputs ($h, $screen);
             fclose ($h);
         }

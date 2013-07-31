@@ -21,6 +21,9 @@ default:
     name: pretty,html
     parameters:
       output_path: null,jm_behat_report.html
+  context:
+    parameters:
+      screenshot_dir: "/tmp/"
 
 annotations:
   paths:
@@ -29,3 +32,4 @@ annotations:
 closures:
   paths:
     features: features/closures
+    
