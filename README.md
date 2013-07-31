@@ -10,7 +10,8 @@ Integration are welcome :)
 
 ### Components and requirements
 * [Composer](https://getcomposer.org)
-* A clean installation of Drupal 7.22 (your installation)
+* An installation of Drupal (your installation). I have worked with Drupal 7.22
+* [Drush](http://drush.ws/) 
 * [drupal-extension](https://github.com/jhedstrom/drupalextension) - provided by composer
 * Behat - provided by composer
 * Mink with extension for Goutte, Mink and Selenium drivers - provided by composer
