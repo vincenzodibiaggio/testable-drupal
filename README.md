@@ -72,17 +72,17 @@ Now Testable Drupal support two test suite
         
 #### Run suite
 
-1. Launch Selenium2
+1. Run Selenium2
 ```
     java -jar selenium-server-standalone-YOUR_VERSION.jar -role hub
 ```
 
-2. Launch PhantomJs
+2. Run PhantomJs
 ```
     phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
 ```
 
-3. Launch tests
+3. Run tests
 ```
     cd vendor/vincenzodibiaggio/testable-drupal/tests
     ./../../../../bin/behat --config behat_dist.yml features/test.feature
@@ -97,7 +97,7 @@ I recommend to you: put both PhantomJs and CasperJs executables in your PATH. Th
         
 #### Run suite
 
-1. Just launch the test:
+1. Just run the test:
 (if you respect the order of filenames you will create nodes and make other test on it... otherwise you will test a failure :D )
 ```
     cd vendor/vincenzodibiaggio/testable-drupal/jsTests
