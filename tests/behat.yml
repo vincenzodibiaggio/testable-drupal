@@ -1,6 +1,6 @@
 default:
   paths:
-    features:  features
+    features: features
     bootstrap: features/bootstrap
   extensions:
     Behat\MinkExtension\Extension:
@@ -18,9 +18,9 @@ default:
       drupal:
         drupal_root: "/home/vincenzodb/www/drupal_behat"
   formatter:
-    name:               pretty,html
+    name: pretty,html
     parameters:
-      output_path:    null,jm_behat_report.html
+      output_path: null,jm_behat_report.html
 
 annotations:
   paths:
