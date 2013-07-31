@@ -93,7 +93,7 @@ Now Testable Drupal support two test suite
 #### Configuration
 1. Modify values in ```testable-drupal/jsTests/includes/includeCasper.js``` - I'm working in a better integration with Drupal
 
-I reccomand to put both PhantomJs and CasperJs executables in your PATH. They work fine together without configuration ;)
+I recommend to you: put both PhantomJs and CasperJs executables in your PATH. They work fine together without configuration ;)
         
 #### Run suite
 
