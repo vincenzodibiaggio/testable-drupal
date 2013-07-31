@@ -1,6 +1,6 @@
 {
     "name": "vincenzodibiaggio/testable-drupal",
-    "description": "A simple set of tools and files to make your Drupal Installation a Testable Drupal Installation Based on Behat, Mink and using Selenium2 and Phantomjs, provide a basic structure to integrate with your tests.",
+    "description": "A simple set of tools and files to make your Drupal Installation a Testable Drupal Installation Based on Behat, Mink and using Selenium2, Phantomjs and CasperJs, provide a basic structure to integrate with your tests.",
     "keywords": ["drupal", "behat", "test", "mink", "selenium2", "phantomJs", "casperJs"],
     "license": "GPL-2.0",
     "authors": [
